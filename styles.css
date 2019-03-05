@@ -238,3 +238,7 @@ table{
     margin: auto;
     left: 100%;
 }
+
+.footer-content{
+    padding-left: 10%; 
+}

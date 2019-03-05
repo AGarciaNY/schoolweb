@@ -10,6 +10,7 @@ databaseRef.once('value').then(function(snapshot){
 
     const databaseValues = snapshot.val();
     console.log(databaseValues);
+    var count = 0;
     //console.log(databaseValues["post"]["content"]);
     //for(var i=0; i<databaseValues["Facts"].length;i++){
     for(var key in databaseValues){
@@ -20,7 +21,8 @@ databaseRef.once('value').then(function(snapshot){
         console.log(databaseValues[key]["name"]);
         
         //split up the tags later
-        $("#body_content").append("<div class="card_align">
+        $("#body_content").append("<div class='card_align "+ count +"card-align'></div>");
+        
     <div class="card col-xs-3 zoom " style="width: 22rem; height:490px;">
       <div class="pos">
         <img class="card_image" src="https://image.slidesharecdn.com/dissertationngaskins-140820202813-phpapp01/95/technovernacular-creativity-innovation-learning-in-underrepresented-ethnic-communities-of-practice-23-638.jpg?cb=1408595361" class="card-img-top" alt="...">
@@ -36,7 +38,7 @@ databaseRef.once('value').then(function(snapshot){
     </div>
   </div>");
         $("#body_content").append("");
-        
+        count++;
         //$("#info").append(databaseValues["Facts"][i]["Fact"]);
         
     }
