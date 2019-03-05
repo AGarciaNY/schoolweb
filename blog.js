@@ -21,23 +21,17 @@ databaseRef.once('value').then(function(snapshot){
         console.log(databaseValues[key]["name"]);
         
         //split up the tags later
-        $("#body_content").append("<div class='card_align "+ count +"card-align'></div>");
-        
-    <div class="card col-xs-3 zoom " style="width: 22rem; height:490px;">
-      <div class="pos">
-        <img class="card_image" src="https://image.slidesharecdn.com/dissertationngaskins-140820202813-phpapp01/95/technovernacular-creativity-innovation-learning-in-underrepresented-ethnic-communities-of-practice-23-638.jpg?cb=1408595361" class="card-img-top" alt="...">
-      </div>
-      <div class="card-body">
-          <hr style="border-top: 1px solid black;">
-          <h5 class="card-title">Conrow Curves</h5>
-          <div class="postwo">
-            <p class="card-text">Fill this in </p>
-          </div>
-          <a href="https://csdt.rpi.edu/culture/legacy/african/CORNROW_CURVES/cornrow_software/cornrow_software.html" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>");
-        $("#body_content").append("");
+        $("#body_content").append("<div class='card_align'id='"+ count +"card-align'></div>");
+        $("#"+ count +"card-align").append("<div class='card col-xs-3 zoom' id='"+ count +"card' style='width: 22rem; height:490px;'></div>");
+        $("#"+count+"card").append("<div class='pos'id='"+ count +"pos'></div>");
+        $("#"+count+"card").append("<div class='card-body' id='"+count+"card-body'></div>");
+        $("#"+count+"pos").append("<img class='card_image' id='"+ count +"card_image' src='"+ databaseValues[key]["image_link"] +"' class='card-img-top' alt='...'>");
+        $("#"+count+"card-body").append("<hr style='border-top: 1px solid black;'>");
+        $("#"+count+"card-body").append("<h5 class='card-title "+ count +"'>"+ databaseValues[key]["name"] +"</h5>");
+        $("#"+count+"card-body").append("<div class='postwo' id='"+ count +"postwo'></div>");
+        $("#"+count+"postwo").append("<i>"+ databaseValues[key]["date"] +"</i><p class='card-text' id='"+ count +"card-text' > " + databaseValues[key]["content"] + " </p>");
+        $("#"+count+"card-body").append("<a href='https://csdt.rpi.edu/culture/legacy/african/CORNROW_CURVES/cornrow_software/cornrow_software.html' class='btn btn-primary card-button'>Go somewhere</a>");
+        console.log(count);
         count++;
         //$("#info").append(databaseValues["Facts"][i]["Fact"]);
         

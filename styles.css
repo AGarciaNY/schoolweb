@@ -242,3 +242,12 @@ table{
 .footer-content{
     padding-left: 10%; 
 }
+
+.card-body{
+    text-align: left;
+}
+
+.card-button{
+    position: relative;
+    top: 18px;
+}
