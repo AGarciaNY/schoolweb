@@ -30,7 +30,7 @@ databaseRef.once('value').then(function(snapshot){
         $("#"+count+"card-body").append("<h5 class='card-title "+ count +"'>"+ databaseValues[key]["name"] +"</h5>");
         $("#"+count+"card-body").append("<div class='postwo' id='"+ count +"postwo'></div>");
         $("#"+count+"postwo").append("<i>"+ databaseValues[key]["date"] +"</i><p class='card-text' id='"+ count +"card-text' > " + databaseValues[key]["content"] + " </p>");
-        $("#"+count+"card-body").append("<a href='https://csdt.rpi.edu/culture/legacy/african/CORNROW_CURVES/cornrow_software/cornrow_software.html' class='btn btn-primary card-button'>Go somewhere</a>");
+        $("#"+count+"card-body").append("<a href='"+ databaseValues[key]["link"] +"' class='btn btn-primary card-button'>Go somewhere</a>");
         console.log(count);
         count++;
         //$("#info").append(databaseValues["Facts"][i]["Fact"]);

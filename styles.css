@@ -251,3 +251,12 @@ table{
     position: relative;
     top: 18px;
 }
+
+#input-submit{
+    color: white;
+}
+
+#error-box{
+    margin: auto;
+    align-items: center;
+}
