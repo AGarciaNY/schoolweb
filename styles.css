@@ -260,3 +260,8 @@ table{
     margin: auto;
     align-items: center;
 }
+
+#about-content{
+    text-align: center;
+    padding: 50px;
+}

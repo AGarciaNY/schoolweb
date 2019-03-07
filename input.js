@@ -39,6 +39,7 @@ databaseRef.once('value').then(function(snapshot){
                     "link" : taskLink,
                     "name" : title,
                 });
+                $("#error-box").clear;
             }
         });
         console.dir($("#error-box"));
