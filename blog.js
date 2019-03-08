@@ -26,7 +26,6 @@ databaseRef.once('value').then(function(snapshot){
         $("#"+count+"card").append("<div class='pos'id='"+ count +"pos'></div>");
         $("#"+count+"card").append("<div class='card-body' id='"+count+"card-body'></div>");
         $("#"+count+"pos").append("<img class='card_image' id='"+ count +"card_image' src='"+ databaseValues[key]["image_link"] +"' class='card-img-top' alt='...'>");
-        $("#"+count+"card-body").append("<hr style='border-top: 1px solid black;'>");
         $("#"+count+"card-body").append("<h5 class='card-title "+ count +"'>"+ databaseValues[key]["name"] +"</h5>");
         $("#"+count+"card-body").append("<div class='postwo' id='"+ count +"postwo'></div>");
         $("#"+count+"postwo").append("<i>"+ databaseValues[key]["date"] +"</i><p class='card-text' id='"+ count +"card-text' > " + databaseValues[key]["content"] + " </p>");
