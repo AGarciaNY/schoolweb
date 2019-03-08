@@ -2,8 +2,8 @@
 /*global $*/
 
 console.log((new Date()).getFullYear());
-console.log(new Date());
-
+console.log(Date());
+var date = Date();
 var database = firebase.database();
 var databaseRef = database.ref('/');
 databaseRef.once('value').then(function(snapshot){
@@ -12,12 +12,7 @@ databaseRef.once('value').then(function(snapshot){
     console.log(databaseValues);
     //console.log(databaseValues["post"]["content"]);
     //for(var i=0; i<databaseValues["Facts"].length;i++){
-    for(var key in databaseValues){
-        
-        console.log(databaseValues[key]);
-        console.log(databaseValues[key]["content"]);
-        console.log(databaseValues[key]["date"]);
-        console.log(databaseValues[key]["name"]);
+
         
         $("#input-submit").click(function(){
             
@@ -26,26 +21,28 @@ databaseRef.once('value').then(function(snapshot){
             var img = $("#img_url").val();
             var taskLink = $("#task_url").val();
             
+            var database = firebase.database();
+            var databaseRef = database.ref('/');
+            
             console.log(title, content, img, taskLink);
             if(title === "" || content === "" || img === "" || taskLink === ""){
                 console.log("missing stuff");
                 $("#error-box").html("<p style='color:red; padding-top: 30px;' >Please fill in all the inputs</p>");
             } else {
                 console.log("wrote everthing");
-                databaseValues.push({
+                databaseRef.push({
                     "content": content,
-                    "date" : new Date(),
+                    "date" : date,
                     "image_link" : img,
                     "link" : taskLink,
                     "name" : title,
                 });
-                $("#error-box").clear;
+                $("#error-box").html("");
+                $(".input").val("");
             }
         });
-        console.dir($("#error-box"));
         
     
-    }
     
     
 
