@@ -133,7 +133,7 @@ body{
 }
 
 .body-content-main{
-    width: 60%;
+    width: 80%;
     padding: 50px;
     padding-top: 0px;
     margin: auto;
@@ -213,8 +213,8 @@ table{
     left:1px;
 }
 #footersch{
-    height:100px;
-    width: 150px;
+    height: 130px;
+    width: 200px;
 }
 .schooltext{
     color: white;
@@ -271,4 +271,20 @@ table{
 
 .about-p{
     padding-bottom: 20px;
+}
+
+.unit{
+    width: 80%;
+    padding: 50px;
+}
+
+.li-container{
+    text-align: left;
+    padding: 20px;
+    width: 70%;
+    margin-left: 10%;
+}
+
+.guide{
+    margin-top: 80px;
 }
